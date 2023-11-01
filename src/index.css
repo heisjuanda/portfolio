@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  min-height: 100dvh;
+
+  background-color: black;
+
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+
+  & button {
+    cursor: pointer;
+  }
+
+  & li {
+    list-style: none;
+  }
+
+  & img {
+    border-radius: 10px;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 1px;
+}
+
+@font-face {
+  font-family: "montserrat-r";
+  src: url("./assets/fonts/montserrat/montserrat-regular-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/montserrat/montserrat-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserrat-l";
+  src: url("./assets/fonts/montserrat/montserrat-extralight-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/montserrat/montserrat-extralight-webfont.woff2")
+      format("woff");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserrat-b";
+  src: url("./assets/fonts/montserrat/montserrat-bold-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/montserrat/montserrat-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "outward";
+  src: url("./assets/fonts/outward/outward-block-webfont.woff2") format("woff2"),
+    url("./assets/fonts/outward/outward-block-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

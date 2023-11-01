@@ -1,0 +1,11 @@
+.talk-section {
+    width: 100vw;
+    min-height: 100dvh;
+
+    background-color: white;
+
+    & .talk-section__container {
+        width: 100%;
+        height: 100%;
+    }
+}

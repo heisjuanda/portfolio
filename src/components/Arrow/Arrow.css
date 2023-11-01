@@ -1,0 +1,49 @@
+@keyframes arrowTransition {
+    from {
+        transform: translate(0px,-0px) scale(0.8);
+    }
+    to {
+        transform: translate(17px, -20px) scale(0.8);
+    }
+}
+
+.arrow__container {
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  margin-inline: auto;
+
+  & div {
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    transform: translate(0px,-0px) scale(0.8);
+    transition: transform 0.3s;
+
+    opacity: 0.6;
+  }
+
+  & img {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 0 !important;
+
+    transform: translate(0px,0) scale(0.8);
+  }
+
+  & img:last-child {
+    transform: translate(-20px,0) scale(0.8);
+  }
+
+}
+
+.arrow__container:hover > div {
+    animation: arrowTransition 0.3s ease;
+}

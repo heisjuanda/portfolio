@@ -1,0 +1,39 @@
+.home-section {
+  background-color: white;
+  & .home-section__container {
+    width: 100vw;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+
+    & header {
+      & h1 {
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+        font-size: 30px;
+        font-family: 'montserrat-b';
+        text-transform: uppercase;
+        & span {
+          font-size: 14px;
+          font-family: 'montserrat-r';
+        }
+      }
+    }
+    & article {
+      & img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}

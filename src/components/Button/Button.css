@@ -1,0 +1,60 @@
+.custom-button {
+  border: none;
+  border-radius: 8px;
+  padding: 0px;
+
+  background-color: black;
+  border: 1px solid transparent;
+
+  max-width: 120px;
+  width: auto;
+  max-height: 40px;
+
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+
+  transition: 0.25s;
+}
+
+.custom-button > a,
+.custom-button > p {
+  color: white;
+  transition: 0.25s;
+  font-family: "montserrat-r";
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.custom-button:hover {
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+.custom-button:hover > a,
+.custom-button:hover > p {
+  color: black;
+}
+
+.custom-button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.custom-button:disabled:hover {
+  background-color: #292e35;
+}
+
+.custom-button:disabled > a,
+.custom-button:disabled > p {
+  color: beige;
+}
+
+.custom-button:active {
+  transform: scale(1.05);
+}
+
+
