@@ -155,6 +155,15 @@ const Project = () => {
           )}
         </article>
         <article>
+          {currentProject?.repo && (
+            <h3 className="project-repository">
+              <a href={currentProject.repo}>
+                See details
+              </a>
+            </h3>
+          ) }
+        </article>
+        <article>
           {currentProject?.details && (
             <ul className="project-details">
               {Array.isArray(currentProject.details) &&
