@@ -50,6 +50,7 @@ export const WORK_PROJECTS = [
       `typescript 5.0.2`,
       `vite 4.3.2`,
     ],
+    repo: "https://github.com/adanj27/Patitas-a-casa"
   },
   {
     key: "4",
@@ -73,6 +74,7 @@ export const WORK_PROJECTS = [
       `sass 1.69.1`,
       `storyblock 4.5.6`,
     ],
+    repo: ""
   },
   {
     key: "2",
@@ -93,6 +95,7 @@ export const WORK_PROJECTS = [
       programLanguageDetailFont,
     ],
     tech: [`racket - scheme 8.6`, `eopl 8.6`, `sllgen 1.0`],
+    repo: "https://github.com/heisjuanda/Program-language"
   },
   {
     key: "3",
@@ -105,5 +108,6 @@ export const WORK_PROJECTS = [
     demo: portfolioDemo,
     details: [portfolioDetailsPC, portfolioDetailsMB, portfolioDetailsFont],
     tech: [`react 18.2.0`, `vite 4.3.9`, `gsap 3.11.5`],
+    repo: "https://github.com/heisjuanda/portfolio"
   },
 ];

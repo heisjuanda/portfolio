@@ -71,6 +71,25 @@
                 line-height: 15px;
             }
         }
+        & .project-repository {
+          text-align: center;
+
+          margin: 50px 0 50px 0;
+
+          font-family: 'montserrat-l';
+          text-transform: uppercase;
+          font-size: 15px;
+
+          & a {
+            color: white;
+            border-bottom: 1px solid transparent;
+            transition:  0.25s;
+          }
+
+          & a:hover {
+            border-bottom: 1px solid white;
+          }
+        }
         & .project-details {
             display: flex;
             flex-direction: column;
