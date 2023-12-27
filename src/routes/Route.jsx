@@ -8,6 +8,7 @@ import Loader from "../components/Loader/Index";
 import { Notification } from "../components/Notification/Index";
 import Home from "../pages/Home/Index";
 
+const ErrorPage = lazy(() => import("../pages/ErrorPage/Index"));
 const About = lazy(() => import("../pages/About/Index"));
 const Work = lazy(() => import("../pages/Work/Index"));
 const Project = lazy(() => import("../pages/Project/Index"));
@@ -28,9 +29,15 @@ export const RoutesConfiguration = () => {
         />
       )}
       <Routes>
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<Loader fullScreen />}>
+              <ErrorPage />
+            </Suspense>
+          }
+        />
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
         <Route
           path="/about"
           element={
@@ -39,8 +46,6 @@ export const RoutesConfiguration = () => {
             </Suspense>
           }
         />
-      </Routes>
-      <Routes>
         <Route
           path="/work"
           element={
@@ -49,8 +54,6 @@ export const RoutesConfiguration = () => {
             </Suspense>
           }
         />
-      </Routes>
-      <Routes>
         <Route
           path="/work/:handle"
           element={
@@ -59,8 +62,6 @@ export const RoutesConfiguration = () => {
             </Suspense>
           }
         />
-      </Routes>
-      <Routes>
         <Route
           path="/contact"
           element={
