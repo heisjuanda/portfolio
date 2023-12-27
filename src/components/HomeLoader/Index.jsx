@@ -17,19 +17,19 @@ const HomeLoader = () => {
 
       gsap.to(".loader-1", {
         width: "200px",
-        duration: 1.5,
+        duration: 0.9,
         ease: "power2.inOut",
       });
 
       gsap.to(".loader-2", {
         width: "100px",
-        duration: 1.5,
+        duration: 0.9,
         ease: "power2.inOut",
       });
 
       gsap.to(".loader", {
         background: "none",
-        delay: 1.5,
+        delay: 0.9,
         duration: 0.1,
       });
 
@@ -38,13 +38,13 @@ const HomeLoader = () => {
         y: -50,
         x: 50,
         duration: 0.4,
-        delay: 1.5,
+        delay: 0.9,
       });
 
       gsap.to(".loader-1 .loader-squares", {
         opacity: 1,
         duration: 0.4,
-        delay: 1.5,
+        delay: 0.9,
       });
 
       gsap.to(
@@ -61,7 +61,7 @@ const HomeLoader = () => {
         scale: 40,
         rotate: -45,
         duration: 0.5,
-        delay: 2.5,
+        delay: 1.9,
         x: 1600,
         y: 2000,
         ease: "power2.inOut",
@@ -70,7 +70,7 @@ const HomeLoader = () => {
       gsap.to(".loading-screen", {
         opacity: 0,
         duration: 0.5,
-        delay: 3,
+        delay: 2.4,
         display: "none",
         ease: "power1.inOut",
       });

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useContext, useRef, useEffect } from "react";
 
 import { PortfolioContext } from "../../context/PortfolioContext";
@@ -29,6 +30,7 @@ export const Notification = ({ title, message, isError }) => {
       }, 5000);
     };
     showHideAnimation();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

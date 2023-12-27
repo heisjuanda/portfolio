@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./Loader.css";
 
 const Loader = ({ fullScreen }) => {

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useMemo, useState } from "react";
 
 import { getLoading } from "../localStorage/localStorage";
