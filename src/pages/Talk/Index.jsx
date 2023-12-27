@@ -15,6 +15,7 @@ const Talk = () => {
   useEffect(() => {
     updateLoadingStatus(false);
     setIsLoading(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   return (

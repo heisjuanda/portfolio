@@ -77,6 +77,7 @@ const Work = () => {
     return () => {
       window.removeEventListener("scroll", setScale);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
