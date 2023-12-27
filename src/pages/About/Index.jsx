@@ -52,6 +52,9 @@ const About = () => {
           </ul>
         </article>
       </section>
+      <section className="about-section__tech--stack">
+
+      </section>
     </main>
   );
 };

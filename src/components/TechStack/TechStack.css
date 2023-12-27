@@ -1,0 +1,37 @@
+.tech-tack-section * {
+    box-sizing: border-box;
+}
+
+.tech-tack-section {
+    margin: 0;
+    margin-top: 2.5%;
+    padding: 0;
+
+    width: 100vw;
+    height: 70vh;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    position: relative;
+}
+
+.tech-tack-section canvas {
+    width: 70vw !important;
+    height: 70vh !important;
+}
+
+.tech-tack-section button {
+    position: absolute;
+    top: 0;
+
+    width: 115px;
+
+    font-size: 16px;
+    font-family: 'aileronL';
+}
