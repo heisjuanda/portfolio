@@ -58,7 +58,7 @@ const HomeLoader = () => {
       );
 
       gsap.to(".loader", {
-        scale: 40,
+        scale: 55,
         rotate: -45,
         duration: 0.5,
         delay: 1.9,
