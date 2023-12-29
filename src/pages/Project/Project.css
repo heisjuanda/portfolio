@@ -34,7 +34,7 @@
           transform: translateY(100%);
         }
         & > img {
-          width: 30px;
+          width: 25px;
           margin-left: 10px;
         }
       }
@@ -157,6 +157,11 @@
 
 @media screen and (max-width: 700px) {
   .project-section {
+    & header {
+      & > h1:has(> img) > span {
+        width: min-content;
+      }
+    }
     & article {
       & .project-description {
         width: 60% !important;
