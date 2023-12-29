@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 import Matter from "matter-js";
 
-import { Button } from "../../../common/Button/Button";
+import Button from "../Button/Index";
 
 import "./TechStack.css";
 
@@ -19,7 +19,16 @@ export const TechStack = ({ techStackImages }) => {
   const canvasRef = useRef(null);
   const buttonRef = useRef(null);
 
+  const [isReset, setIsReset] = useState(false);
+
   useLayoutEffect(() => {
+
+    function getRandomChoice() {
+      const choices = [2,4,8, 1.5, 1.25];
+      const randomIndex = Math.floor(Math.random() * choices.length);
+      return choices[randomIndex];
+    }
+
     let engine, render, runner, mouse;
     const handleResetCanvas = () => {
       if (engine && render && runner && mouse) {
@@ -34,7 +43,7 @@ export const TechStack = ({ techStackImages }) => {
           canvas: canvasRef.current,
           engine: engine,
           options: {
-            background: "white",
+            background: "rgb(40, 40, 40)",
             wireframes: false,
             width: window.innerWidth,
             height: window.innerHeight,
@@ -42,18 +51,26 @@ export const TechStack = ({ techStackImages }) => {
         });
         let boxes = [];
         for (const logo of techStackImages) {
-          let box = Bodies.rectangle(window.innerWidth / 2, 0, 74, 74, {
-            label: "hola",
-            density: 0.8,
-            frictionAir: 0.01,
-            restitution: 0.5,
-            friction: 0.001,
-            render: {
-              sprite: {
-                texture: logo,
+          let box = Bodies.rectangle(
+            window.innerWidth / getRandomChoice(),
+            0,
+            95,
+            95,
+            {
+              label: "",
+              density: 0.8,
+              frictionAir: 0.01,
+              restitution: 0.5,
+              friction: 0.001,
+              render: {
+                sprite: {
+                  texture: logo,
+                  xScale: 1.2,
+                  yScale: 1.2,
+                },
               },
-            },
-          });
+            }
+          );
           boxes.push(box);
         }
         let ground = Bodies.rectangle(
@@ -133,11 +150,18 @@ export const TechStack = ({ techStackImages }) => {
     Render,
     Runner,
     techStackImages,
+    isReset,
   ]);
 
   return (
     <section className="tech-tack-section">
-      <Button className={"reset-btn__tech"} text="Reset" />
+      <Button
+        click={() => {
+          setIsReset((prev) => !prev);
+        }}
+        className={"reset-btn__tech"}
+        text="Reset"
+      />
       <canvas ref={canvasRef}></canvas>
     </section>
   );

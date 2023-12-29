@@ -16,22 +16,24 @@
     justify-content: center;
     align-items: center;
 
-    background-color: white;
+    background-color: rgb(30, 30, 30);
 
     position: relative;
 }
 
 .tech-tack-section canvas {
-    width: 70vw !important;
-    height: 70vh !important;
+    width: 50vw !important;
+    height: 50vh !important;
+    border-radius: 15px !important;
+    border: none !important;
 }
 
 .tech-tack-section button {
     position: absolute;
-    top: 0;
+    top: 10%;
 
-    width: 115px;
+    width: 80px;
+    height: 30px !important;
 
-    font-size: 16px;
-    font-family: 'aileronL';
+    font-size: 13px;
 }
