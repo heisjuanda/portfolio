@@ -165,7 +165,7 @@ export const WORK_PROJECTS = [
       `zod 3.21.4`,
       `zustand 4.3.8`,
     ],
-    techStack: [REACT, NEXT, HTML, TS, AXIOS, TAILWIND],
+    techStack: [REACT, NEXT, HTML, TS, AXIOS, TAILWIND, JEST],
     repo: "https://staging.reddocares.org.uk/",
     isMine: false,
   },
