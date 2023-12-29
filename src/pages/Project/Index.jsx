@@ -9,6 +9,8 @@ import { PortfolioContext } from "../../context/PortfolioContext";
 import CurrentSection from "../../components/CurrentSection/Index";
 import Button from "../../components/Button/Index";
 
+import { TechStack } from "../../components/TechStack/Index";
+
 import { updateLoadingStatus } from "../../localStorage/localStorage";
 import {
   getNextProject,
@@ -16,6 +18,8 @@ import {
 } from "../../helpers/getNextProject";
 
 import useProject from "../../hooks/useProject";
+
+import checked from "/icons/checkProject.png";
 
 import "./Project.css";
 
@@ -45,7 +49,7 @@ const Project = () => {
       duration: 0.5,
       ease: "power4.in",
     });
-    gsap.to("article", {
+    gsap.to(".disappear", {
       opacity: 0,
       duration: 0.5,
       ease: "power4.out",
@@ -53,14 +57,16 @@ const Project = () => {
 
     setTimeout(() => {
       history(`/work/${nextHandle}`);
-      setIsDisabled(false);
     }, 501);
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, 1001)
   };
 
   useEffect(() => {
     setIsLoading(false);
     updateLoadingStatus(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -78,7 +84,7 @@ const Project = () => {
         delay: 0.5,
         ease: "power4.out",
       });
-      gsap.to("article", {
+      gsap.to(".disappear", {
         opacity: "1",
         duration: 0.5,
         delay: 0.5,
@@ -95,7 +101,16 @@ const Project = () => {
         <header>
           {currentProject?.name && (
             <h1>
-              <span className="container-project--name">{currentProject.name}</span>
+              <span className="container-project--name">
+                {currentProject.name}
+              </span>
+              {currentProject?.isMine && (
+                <img
+                  src={checked}
+                  className="disappear"
+                  alt="this project was made by heisjuanda (not apply for projects made in heisjuanda's job)"
+                />
+              )}
             </h1>
           )}
           {currentProject?.category && (
@@ -109,16 +124,16 @@ const Project = () => {
                   })}
               </span>
             </h4>
-          )}
+          )} 
         </header>
-        <article>
+        <article className="disappear">
           {currentProject?.description && (
             <div className="project-description">
               <p>{currentProject.description}</p>
             </div>
           )}
         </article>
-        <article className="project-navigation--control">
+        <article className="project-navigation--control disappear">
           <Button
             click={() => {
               handleNextHandle(true);
@@ -134,7 +149,7 @@ const Project = () => {
             disabled={isDisabled}
           />
         </article>
-        <article className="project-demo">
+        <article className="project-demo disappear">
           {currentProject?.demo && (
             <div>
               <LazyLoadImage
@@ -145,7 +160,7 @@ const Project = () => {
             </div>
           )}
         </article>
-        <article>
+        <article className="disappear">
           {currentProject?.tech && (
             <ul className="project-tech--stack">
               {Array.isArray(currentProject.tech) &&
@@ -155,16 +170,19 @@ const Project = () => {
             </ul>
           )}
         </article>
-        <article>
+        {currentProject?.techStack && (
+          <article className="disappear">
+            <TechStack techStackImages={currentProject.techStack} />
+          </article>
+        )}
+        <article className="disappear">
           {currentProject?.repo && (
             <h3 className="project-repository">
-              <a href={currentProject.repo}>
-                See details
-              </a>
+              <a href={currentProject.repo}>See details</a>
             </h3>
-          ) }
+          )}
         </article>
-        <article>
+        <article className="disappear">
           {currentProject?.details && (
             <ul className="project-details">
               {Array.isArray(currentProject.details) &&
