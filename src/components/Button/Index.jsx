@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./Button.css";
 
 const Button = ({ text, link, click, style, type, disabled, child }) => {
