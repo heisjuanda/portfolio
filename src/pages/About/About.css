@@ -58,10 +58,6 @@
       }
     }
   }
-
-  & .about-section__tech--stack {
-    
-  }
 }
 
 @media screen and (max-width: 700px) {
